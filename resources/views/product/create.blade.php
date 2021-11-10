@@ -48,13 +48,30 @@
                 @for ($i=0; $i<$productsCount; $i++ )
                 <div class="product">
                     <input type="text" name="productTitle[][title]" />
+                    @error("productTitle.".$i.".title")
+                        {{$message}}
+                    @enderror
                     <input type="text" name="productPrice[][price]" />
+                    @error("productPrice.".$i.".title")
+                        {{$message}}
+                    @enderror
                     <textarea name="productExcerpt[][excerpt]"></textarea>
+                    @error("productExcerpt.".$i.".title")
+                        {{$message}}
+                    @enderror
                     <textarea name="productDescription[][description]"></textarea>
+                    @error("productDescription.".$i.".title")
+                        {{$message}}
+                    @enderror
                     <button type="button" class="btn btn-danger remove-product">-</button>
                 </div>
                 @endfor
             </div>
+
+            {{-- @error("productTitle")
+            {{$message}}
+            @enderror --}}
+
 
 
         <button type="submit">Add</button>

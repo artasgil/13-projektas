@@ -38,8 +38,6 @@ class ProductController extends Controller
             $productsCount--;
         }
 
-
-
         return view('product.create', ['productsCount' => $productsCount]);
     }
 
